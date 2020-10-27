@@ -1,0 +1,10 @@
+{{range $key, $value := .}}
+{{ $ipv4AddrLen := len $value.IP }}
+{{ $ipv6AddrLen := len $value.IP6Global }}
+{{ if gt $ipv4AddrLen 0 }}
+{{$value.IP}} {{ $value.Name }}
+{{ end }}
+{{ if gt $ipv6AddrLen 0 }}
+{{$value.IP6Global}} {{ $value.Name }}
+{{ end }}
+{{end}}
